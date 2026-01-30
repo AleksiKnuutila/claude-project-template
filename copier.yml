@@ -24,6 +24,7 @@ project_description:
 github_username:
   type: str
   help: "GitHub username (for repo creation)"
+  default: "AleksiKnuutila"
 
 use_bd:
   type: bool
