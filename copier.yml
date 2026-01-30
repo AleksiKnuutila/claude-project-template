@@ -1,0 +1,46 @@
+# Copier configuration
+_templates_suffix: .jinja
+_answers_file: .copier-answers.yml
+
+# Questions
+project_name:
+  type: str
+  help: "Project name (lowercase-with-dashes)"
+  validator: >-
+    {% if not project_name.replace('-', '').replace('_', '').isalnum() %}
+    Must contain only lowercase letters, numbers, dashes, and underscores
+    {% endif %}
+
+project_description:
+  type: str
+  help: "Brief project description"
+  default: ""
+
+github_username:
+  type: str
+  help: "GitHub username (for repo creation)"
+
+use_bd:
+  type: bool
+  help: "Use bd (beads) for issue tracking?"
+  default: yes
+
+create_github_repo:
+  type: bool
+  help: "Create private GitHub repository?"
+  default: yes
+
+# Computed variables
+_project_slug:
+  type: str
+  default: "{{ project_name | lower | replace(' ', '-') }}"
+
+_current_year:
+  type: str
+  default: "2026"
+
+# Post-generation tasks
+_tasks:
+  - "chmod +x .copier-post-gen.sh"
+  - "bash .copier-post-gen.sh"
+  - "rm .copier-post-gen.sh"
