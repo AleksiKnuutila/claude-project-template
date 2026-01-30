@@ -1,3 +1,4 @@
+{% if use_bd %}
 ## Issue Tracking
 
 This project uses **bd (beads)** for issue tracking.
@@ -10,3 +11,16 @@ Run `bd prime` for workflow context, or install hooks (`bd hooks install`) for a
 - `bd sync` - Sync with git (run at session end)
 
 For full workflow details: `bd prime`
+{% else %}
+## Project: {{ project_name }}
+
+{% if project_description %}{{ project_description }}{% endif %}
+
+<!-- Add project-specific Claude Code instructions here -->
+<!-- Examples:
+- Code style preferences
+- Testing requirements
+- Architectural decisions
+- Deployment notes
+-->
+{% endif %}

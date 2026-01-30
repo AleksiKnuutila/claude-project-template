@@ -1,0 +1,22 @@
+# {{ project_name }}
+
+{% if project_description %}{{ project_description }}{% endif %}
+
+## Setup
+
+[Add setup instructions here]
+
+## Development
+
+[Add development workflow here]
+
+{% if use_bd %}
+## Issue Tracking
+
+This project uses [bd (beads)](https://github.com/cased/bd) for issue tracking.
+
+Quick reference:
+- `bd ready` - Find unblocked work
+- `bd create "Title"` - Create new issue
+- `bd close <id>` - Complete work
+{% endif %}
