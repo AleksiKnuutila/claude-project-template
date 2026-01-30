@@ -5,7 +5,7 @@ _exclude:
   - docs
   - TEMPLATE_README.md
   - .git
-  - .gitignore  # Template has .gitignore.jinja instead
+  - copier.yml  # Template config, not for generated projects
 
 # Questions
 project_name:
