@@ -1,2 +1,5 @@
 # Design docs - kept local, not part of template
 docs/
+
+# Worktrees - isolated development branches
+.worktrees/
