@@ -1,6 +1,11 @@
 # Copier configuration
 _templates_suffix: .jinja
 _answers_file: .copier-answers.yml
+_exclude:
+  - docs
+  - TEMPLATE_README.md
+  - .git
+  - .gitignore  # Template has .gitignore.jinja instead
 
 # Questions
 project_name:
